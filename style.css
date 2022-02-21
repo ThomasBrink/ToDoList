@@ -1,0 +1,21 @@
+.container{
+	width: 500px;
+	margin: 0 auto;
+}
+
+h1{
+	text-align: center;
+}
+
+.listcontainer{
+	display: inline-block;
+	border: 2px solid black;
+	width: 200px;
+	text-align: center;
+	height: 500px;
+	padding: 5px;
+}
+
+.taskscontainer{
+	border: 2px solid black;
+}
