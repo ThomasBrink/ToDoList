@@ -14,21 +14,23 @@
 	<title>ToDo List</title>
 </head>
 <body>
+	<h1>ToDo List</h1>
+	<a class="addlist" href="addlist.php">Voeg nieuwe list toe</a>
 	<div class="container">
-		<h1>ToDo List</h1>
-
 		<?php 
 			for($i = 0; $i < count($rows); $i++){
 		?>
 			<div class="listcontainer">
 				<h2><?php echo $rows[$i]["listname"]; ?></h2>
 
-				<a></a>
+				<a href="edit.php?id= <?php echo $rows[$i]["id"]; ?>">Bewerk list</a>
+				<br>
+				<br>
+				<a href="delete.php?id= <?php echo $rows[$i]["id"]; ?>">Verwijder list</a>
 			</div>
 		<?php
 			}
 		?>
 	</div>		
-
 </body>
 </html>
