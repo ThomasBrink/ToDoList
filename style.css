@@ -1,6 +1,15 @@
 .container{
 	width: 1000px;
 	margin: 0 auto;
+	border: 1px solid black;
+	padding: 5px;
+}
+
+header{
+	width: 1000px;
+	height: 50px;
+	background-color: whitesmoke;
+	margin-bottom: 5px;
 }
 
 h1{
@@ -10,13 +19,19 @@ h1{
 .listcontainer{
 	display: inline-block;
 	border: 2px solid black;
-	width: 200px;
+	width: 243px;
 	text-align: center;
 	padding-bottom: 50px;
 }
 
-.taskscontainer{
+.taskcon{
+	position: relative;
+	margin: 0 auto;
 	border: 2px solid black;
+	width: 220px;
+	background-color: whitesmoke;
+	margin-bottom: 5px;
+	padding-bottom: 5px;
 }
 
 .addlist{
@@ -28,11 +43,13 @@ h1{
 	text-align: center;
 	padding: 5px;
 	border-radius: 15px;
+	border: 1px solid black;
 }
 
 .addlist:hover{
 	color: black;
 	background-color: whitesmoke;
+	border: 1px solid black;
 }
 
 a{

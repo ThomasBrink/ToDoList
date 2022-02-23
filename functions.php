@@ -34,6 +34,18 @@
 		$query->execute();
 	}
 
+	function DeleteTask($id){
+		$conn = openDatabase();
+		$query = $conn->prepare("DELETE FROM `tasks` WHERE `id` = $id");
+		$query->execute();
+	}
+
+	function DeleteListTasks($id){
+		$conn = openDatabase();
+		$query = $conn->prepare("DELETE FROM `tasks` WHERE `listid` = $id");
+		$query->execute();
+	}
+
 	function AddList($data){
 		$conn = openDatabase();
 		$query = $conn->prepare("INSERT INTO `lists` (`id`, `listname`) VALUES (NULL, '$data[listname]')");
@@ -47,10 +59,14 @@
 	}
 
 	function AddTaskToList($data){
-		echo $data["listId"];
-		echo $data["task"];
 		$conn = openDatabase();
-		$query = $conn->prepare("INSERT INTO `tasks` (`id`, `listid`, `task`) VALUES (NULL, '$data[listId]', '$data[task]');");
+		$query = $conn->prepare("INSERT INTO `tasks` (`id`, `listid`, `task`, `duur`) VALUES (NULL, '$data[listId]', '$data[task]', '$data[duur]');");
+		$query->execute();
+	}
+
+	function EditTask($data){
+		$conn = openDatabase();
+		$query = $conn->prepare("UPDATE `tasks` SET `task` = '$data[task]', `duur` = '$data[duur]' WHERE `id` = '$data[id]';");
 		$query->execute();
 	}
 ?>

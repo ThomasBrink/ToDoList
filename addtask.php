@@ -7,10 +7,12 @@
 			$check = false;
 
 			$v1 = $_POST["v1"];
+			$v2 = $_POST["v2"];
 
 	   		$data = array(
 	   		"listId" => $_GET["id"],
-	   	    "task" => $v1
+	   	    "task" => $v1,
+	   	    "duur" => $v2
 	    );
 
 		AddTaskToList($data);
@@ -30,10 +32,14 @@
 			if($check == true){
 		?>
 		<h1>Add taak</h1>
-
+		<header></header>
 		<form method="POST">
 			<label for= "v1" class= "l1">Taak omschrijving:</label>
 			<input type="text" name="v1" placeholder="Vul in.">
+
+			<label for= "v2" class= "l2">Verwachte duur van taak:</label>
+			<input type="time" name="v2" placeholder="Vul in.">
+
 
 			<button>Toevoegen</button>
 		</form>

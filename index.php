@@ -2,10 +2,6 @@
 	require("functions.php");
 
 	$rows = GetAllLists();
-
-	$taskrows = GetAllTasks();
-
-	var_dump($taskrows);
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,17 +14,26 @@
 <body>
 	<div class="container">
 		<h1>ToDo List</h1>
+		<header></header>
 		<?php 
 			for($i = 0; $i < count($rows); $i++){
+
+				$taskrows = GetListTask($rows[$i]["id"]);
 		?>
 			<div class="listcontainer">
 				<h2><?php echo $rows[$i]["listname"]; ?></h2>
-
 				<?php
 					for($a = 0; $a < count($taskrows); $a++){
 				?>
 					<div class="taskcon">
-						<p>test</p>
+						<p><?php echo $taskrows[$a]["task"]; ?></p>
+
+						<p>Duur: <br> <?php echo $taskrows[$a]["duur"]; ?></p>
+
+						<a href="editTask.php?id= <?php echo $taskrows[$a]["id"]; ?>">Bewerk deze taak</a>
+						<br>
+						<br>
+						<a href="deleteTask.php?id= <?php echo $taskrows[$a]["id"]; ?>">Verwijder deze taak</a>
 					</div>
 				<?php
 					}
@@ -47,4 +52,5 @@
 		<a class="addlist" href="addlist.php">Voeg nieuwe list toe</a>
 	</div>		
 </body>
+<script src="script.js"></script>
 </html>

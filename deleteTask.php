@@ -4,9 +4,7 @@
     echo $_GET["id"];
 
     if(isset($_GET["id"])){
-        DeleteList($_GET["id"]);
-
-        DeleteListTasks($_GET["id"]);
+        DeleteTask($_GET["id"]);
 
         header("location: index.php");
     }
