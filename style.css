@@ -20,13 +20,19 @@ h1{
 }
 
 .addlist{
+	display: block;
+	width: 150px;
 	color: black;
 	text-decoration: none;
-	margin-left: 875px;
+	margin: 0 auto;
+	text-align: center;
+	padding: 5px;
+	border-radius: 15px;
 }
 
 .addlist:hover{
-	color: red;
+	color: black;
+	background-color: whitesmoke;
 }
 
 a{
