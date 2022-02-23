@@ -70,15 +70,15 @@
 		$query->execute();
 	}
 
-	function EditList($data){
-		$conn = openDatabase();
-		$query = $conn->prepare("UPDATE `lists` SET `listname` = '$data[listname]' WHERE `lists`.`id` = '$data[id]';");
-		$query->execute();
-	}
-
 	function AddTaskToList($data){
 		$conn = openDatabase();
 		$query = $conn->prepare("INSERT INTO `tasks` (`id`, `listid`, `task`, `duur`) VALUES (NULL, '$data[listId]', '$data[task]', '$data[duur]');");
+		$query->execute();
+	}
+
+	function EditList($data){
+		$conn = openDatabase();
+		$query = $conn->prepare("UPDATE `lists` SET `listname` = '$data[listname]' WHERE `lists`.`id` = '$data[id]';");
 		$query->execute();
 	}
 
