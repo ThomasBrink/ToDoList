@@ -10,12 +10,30 @@
 	    return $rows;
 	}
 
+	function GetList($id){
+		$conn = openDatabase();
+		$query = "SELECT * FROM `lists` WHERE `id` = $id";
+	    $result = $conn->prepare($query);
+	    $result->execute();
+	    $rows = $result->fetch();
+	    return $rows;
+	}
+
 	function GetAllTasks(){
 		$conn = openDatabase();
 		$query = "SELECT * FROM `tasks`";
 	    $result = $conn->prepare($query);
 	    $result->execute();
 	    $rows = $result->fetchAll();
+	    return $rows;
+	}
+
+	function GetTask($id){
+		$conn = openDatabase();
+		$query = "SELECT * FROM `tasks` WHERE `id` = $id";
+	    $result = $conn->prepare($query);
+	    $result->execute();
+	    $rows = $result->fetch();
 	    return $rows;
 	}
 

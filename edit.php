@@ -1,6 +1,8 @@
 <?php 
 	require("functions.php");
 
+	$list = GetList($_GET["id"]);
+
 	$check = true;
 
 	if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -35,7 +37,7 @@
 		<header></header>
 		<form method="POST">
 			<label for= "v1" class= "l1">List naam:</label>
-			<input type="text" name="v1" placeholder="Vul in.">
+			<input type="text" name="v1" placeholder="Vul in." value="<?php echo $list['listname'] ?>">
 
 			<button>Bewerken</button>
 		</form>

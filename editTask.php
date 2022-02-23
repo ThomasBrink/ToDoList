@@ -3,6 +3,8 @@
 
 	$check = true;
 
+	$rows = GetTask($_GET["id"]);
+
 	if($_SERVER['REQUEST_METHOD'] == 'POST'){
 			$check = false;
 
@@ -36,10 +38,10 @@
 		<header></header>
 		<form method="POST">
 			<label for= "v1" class= "l1">Taak omschrijving:</label>
-			<input type="text" name="v1" placeholder="Vul in.">
+			<input type="text" name="v1" placeholder="Vul in." value="<?php echo $rows['task'] ?>" required>
 
 			<label for= "v2" class= "l2">Verwachte duur van taak:</label>
-			<input type="time" name="v2" placeholder="Vul in.">
+			<input type="time" name="v2" placeholder="Vul in." value="<?php echo $rows['duur'] ?>" required>
 
 			<button>Bewerken</button>
 		</form>
@@ -48,7 +50,7 @@
 
 			else{
 		?>
-			<h1>List is bewerkt</h1>
+			<h1>Task is bewerkt</h1>
 
 			<a href="index.php">Terug naar index</a>
 		<?php
