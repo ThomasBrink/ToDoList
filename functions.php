@@ -46,6 +46,15 @@
 	    return $rows;
 	}
 
+	function GetListTaskOrdered($listId){
+		$conn = openDatabase();
+		$query = "SELECT * FROM `tasks` WHERE `listid` = $listId ORDER BY `status`";
+		$result = $conn->prepare($query);
+	    $result->execute();
+	    $rows = $result->fetchAll();
+	    return $rows;
+	}
+
 	function DeleteList($id){
 		$conn = openDatabase();
 		$query = $conn->prepare("DELETE FROM `lists` WHERE `id` = $id");
@@ -72,7 +81,7 @@
 
 	function AddTaskToList($data){
 		$conn = openDatabase();
-		$query = $conn->prepare("INSERT INTO `tasks` (`id`, `listid`, `task`, `duur`) VALUES (NULL, '$data[listId]', '$data[task]', '$data[duur]');");
+		$query = $conn->prepare("INSERT INTO `tasks` (`id`, `listid`, `task`, `duur`, `status`) VALUES (NULL, '$data[listId]', '$data[task]', '$data[duur]', '$data[status]');");
 		$query->execute();
 	}
 

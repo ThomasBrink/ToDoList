@@ -12,7 +12,8 @@
 	   		$data = array(
 	   		"listId" => $_GET["id"],
 	   	    "task" => $v1,
-	   	    "duur" => $v2
+	   	    "duur" => $v2,
+	   	    "status" => "Starten"
 	    );
 
 		AddTaskToList($data);

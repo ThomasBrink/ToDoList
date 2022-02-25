@@ -14,11 +14,13 @@
 <body>
 	<div class="container">
 		<h1>ToDo List</h1>
-		<header></header>
+		<header>
+			
+		</header>
 		<?php 
 			for($i = 0; $i < count($rows); $i++){
 
-				$taskrows = GetListTask($rows[$i]["id"]);
+				$taskrows = GetListTaskOrdered($rows[$i]["id"]);
 		?>
 			<div class="listcontainer">
 				<h2><?php echo $rows[$i]["listname"]; ?></h2>
@@ -26,6 +28,7 @@
 					for($a = 0; $a < count($taskrows); $a++){
 				?>
 					<div class="taskcon">
+						<div class="<?php echo $taskrows[$a]["status"]; ?>"></div>
 						<p><?php echo $taskrows[$a]["task"]; ?></p>
 
 						<p>Duur: <br> <?php echo $taskrows[$a]["duur"]; ?></p>
