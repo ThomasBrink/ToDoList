@@ -46,9 +46,18 @@
 	    return $rows;
 	}
 
-	function GetListTaskOrdered($listId){
+	function GetListTaskOrdered($listId, $Order){
 		$conn = openDatabase();
-		$query = "SELECT * FROM `tasks` WHERE `listid` = $listId ORDER BY `status`";
+		$query = "SELECT * FROM `tasks` WHERE `listid` = $listId ORDER BY $Order";
+		$result = $conn->prepare($query);
+	    $result->execute();
+	    $rows = $result->fetchAll();
+	    return $rows;
+	}
+
+	function GetListTaskFilterd($listId, $filter){
+		$conn = openDatabase();
+		$query = "SELECT * FROM `tasks` WHERE `listid` = $listId AND `status` = '$filter'";
 		$result = $conn->prepare($query);
 	    $result->execute();
 	    $rows = $result->fetchAll();

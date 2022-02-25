@@ -15,12 +15,23 @@
 	<div class="container">
 		<h1>ToDo List</h1>
 		<header>
-			
+			<a href="index.php?view=">Status</a>
+			<a href="index.php?view=duur">Duur</a>
+			<a href="index.php?view=aKlaar">Klaar</a>
+			<a href="index.php?view=Bezig">Bezig</a>
+			<a href="index.php?view=Starten">Starten</a>
 		</header>
 		<?php 
 			for($i = 0; $i < count($rows); $i++){
-
-				$taskrows = GetListTaskOrdered($rows[$i]["id"]);
+				if($_GET["view"] == "duur"){
+					$taskrows = GetListTaskOrdered($rows[$i]["id"], "duur");
+				}
+				else if($_GET["view"] == "aKlaar" || $_GET["view"] == "Bezig" || $_GET["view"] == "Starten"){
+					$taskrows = GetListTaskFilterd($rows[$i]["id"], $_GET["view"]);
+				}
+				else($_GET["view"] == ""){
+					$taskrows = GetListTaskOrdered($rows[$i]["id"], "status")
+				}
 		?>
 			<div class="listcontainer">
 				<h2><?php echo $rows[$i]["listname"]; ?></h2>
