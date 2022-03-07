@@ -10,11 +10,13 @@
 
 			$v1 = $_POST["v1"];
 			$v2 = $_POST["v2"];
+			$v3 = $_POST["v3"];
 
 	   		$data = array(
 	   		"id" => $_GET['id'],
 	   	    "task" => $v1,
-	   	    "duur" => $v2
+	   	    "duur" => $v2,
+	   	    "status" => $v3
 	    );
 
 		EditTask($data);
@@ -42,6 +44,13 @@
 
 			<label for= "v2" class= "l2">Verwachte duur van taak:</label>
 			<input type="time" name="v2" placeholder="Vul in." value="<?php echo $rows['duur'] ?>" required>
+
+			<label for= "v3" class= "l3">status:</label>
+			 <select name="v3">
+    			<option value="aKlaar">Klaar</option>
+    			<option value="Bezig">Bezig</option>
+    			<option value="Starten">Starten</option>
+  			</select>
 
 			<button>Bewerken</button>
 		</form>

@@ -102,7 +102,7 @@
 
 	function EditTask($data){
 		$conn = openDatabase();
-		$query = $conn->prepare("UPDATE `tasks` SET `task` = '$data[task]', `duur` = '$data[duur]' WHERE `id` = '$data[id]';");
+		$query = $conn->prepare("UPDATE `tasks` SET `task` = '$data[task]', `duur` = '$data[duur]', `status` = '$data[status]' WHERE `id` = '$data[id]';");
 		$query->execute();
 	}
 ?>
