@@ -10,6 +10,15 @@
 	    return $rows;
 	}
 
+	function GetAllListsFilterd($filter){
+		$conn = openDatabase();
+		$query = "SELECT lists.id AS 'mainId', lists.listname AS 'listname' FROM `lists` INNER JOIN `tasks` ON lists.id = tasks.listId WHERE `status` = '$filter'";
+	    $result = $conn->prepare($query);
+	    $result->execute();
+	    $rows = $result->fetchAll();
+	    return $rows;
+	}
+
 	function GetList($id){
 		$conn = openDatabase();
 		$query = "SELECT * FROM `lists` WHERE `id` = $id";
