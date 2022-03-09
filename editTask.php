@@ -47,7 +47,7 @@
 
 			<label for= "v3" class= "l3">status:</label>
 			 <select name="v3">
-    			<option value="aKlaar">Klaar</option>
+    			<option value="Afgerond">Afgerond</option>
     			<option value="Bezig">Bezig</option>
     			<option value="Starten">Starten</option>
   			</select>

@@ -1,7 +1,7 @@
 <?php
 	require("functions.php");
 
-	if($_GET["view"] == "aKlaar" || $_GET["view"] == "Bezig" || $_GET["view"] == "Starten"){
+	if($_GET["view"] == "Afgerond" || $_GET["view"] == "Bezig" || $_GET["view"] == "Starten"){
 		$rows = GetAllListsFilterd($_GET["view"]);
 	}
 	else{
@@ -22,7 +22,7 @@
 		<header>
 			<a href="index.php?view=">Status</a>
 			<a href="index.php?view=duur">Duur</a>
-			<a href="index.php?view=aKlaar">Klaar</a>
+			<a href="index.php?view=Afgerond">Afgerond</a>
 			<a href="index.php?view=Bezig">Bezig</a>
 			<a href="index.php?view=Starten">Starten</a>
 		</header>
@@ -31,7 +31,7 @@
 				if($_GET["view"] == "duur"){
 					$taskrows = GetListTaskOrdered($rows[$i]["id"], "duur");
 				}
-				else if($_GET["view"] == "aKlaar" || $_GET["view"] == "Bezig" || $_GET["view"] == "Starten"){
+				else if($_GET["view"] == "Afgerond" || $_GET["view"] == "Bezig" || $_GET["view"] == "Starten"){
 					$taskrows = GetListTaskFilterd($rows[$i]["id"], $_GET["view"]);
 				}
 				else($_GET["view"] == ""){
