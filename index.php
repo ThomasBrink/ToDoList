@@ -32,7 +32,7 @@
 					$taskrows = GetListTaskOrdered($rows[$i]["id"], "duur");
 				}
 				else if($_GET["view"] == "aKlaar" || $_GET["view"] == "Bezig" || $_GET["view"] == "Starten"){
-					$taskrows = GetListTaskFilterd($rows[$i]["mainId"], $_GET["view"]);
+					$taskrows = GetListTaskFilterd($rows[$i]["id"], $_GET["view"]);
 				}
 				else($_GET["view"] == ""){
 					$taskrows = GetListTaskOrdered($rows[$i]["id"], "status")

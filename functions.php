@@ -12,7 +12,7 @@
 
 	function GetAllListsFilterd($filter){
 		$conn = openDatabase();
-		$query = "SELECT lists.id AS 'mainId', lists.listname AS 'listname' FROM `lists` INNER JOIN `tasks` ON lists.id = tasks.listId WHERE `status` = '$filter'";
+		$query = "SELECT lists.id AS 'id', lists.listname AS 'listname' FROM `lists` INNER JOIN `tasks` ON lists.id = tasks.listId WHERE `status` = '$filter'";
 	    $result = $conn->prepare($query);
 	    $result->execute();
 	    $rows = $result->fetchAll();
