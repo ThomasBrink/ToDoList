@@ -13,7 +13,7 @@ header{
 }
 
 header > a{
-	margin-left: 100px;
+	margin-left: 125px;
 }
 
 h1{
@@ -22,6 +22,7 @@ h1{
 
 .listcontainer{
 	display: inline-block;
+	vertical-align: text-top;
 	border: 2px solid black;
 	width: 243px;
 	text-align: center;
