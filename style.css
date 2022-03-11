@@ -96,3 +96,10 @@ a{
 a:hover{
 	color: red;
 }
+
+.taakOm{
+  width: 995px;
+  height: 150px;
+  text-align: left;
+  resize: none;
+}

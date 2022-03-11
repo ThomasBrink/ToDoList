@@ -34,7 +34,7 @@
 
 		<form method="POST">
 			<label for= "v1" class= "l1">List naam:</label>
-			<input type="text" name="v1" placeholder="Vul in.">
+			<input type="text" name="v1" placeholder="Vul in." required>
 
 			<button>Toevoegen</button>
 		</form>
